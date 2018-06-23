@@ -1,18 +1,21 @@
 import React, { Component } from "react";
-import Unity from "../../../React-Unity-WebGL/";
+import Unity, { UnityContent } from "../../../React-Unity-WebGL/";
+import { UnityVersion } from "../../../React-Unity-WebGL/source/enums/UnityVerions";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-
-    this.myUnity = new Unity();
+    this.unityContent = new UnityContent(
+      "Public/Build/myGame.json",
+      "Public/Build/UnityLoader.js"
+    );
+    console.log(this.unityContent);
   }
   render() {
     return (
       <div>
         <h1>React Unity WebGL Test</h1>
-        <this.myUnity />
+        <Unity content={this.unityContent} />
       </div>
     );
   }
