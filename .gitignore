@@ -1,7 +1,10 @@
 node_modules
 dist
+.DS_Store
 unity_project/**/[Ll]ibrary/
 unity_project/**/[Tt]emp/
+unity_project/**/ProjectSettings/
+unity_project/**/UnityPackageManager/
 unity_project/**/[Oo]bj/
 unity_project/**/Assets/AssetStoreTools*
 unity_project/**/.vs/
@@ -23,6 +26,3 @@ unity_project/**/*.pidb.meta
 unity_project/**/*.pdb.meta
 unity_project/**/sysinfo.txt
 unity_project/**/*.meta
-unity_project/**/ProjectVersion.txt
-unity_project/**/*.asset
-unity_project/**/manifest.json
