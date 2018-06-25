@@ -13,7 +13,7 @@ When building content for the web, you might need to communicate with other elem
 
 **&Lt;**
 [**Documentation**](https://github.com/jeffreylanters/react-unity-webgl/wiki) &middot;
-[**Repository**](https://github.com/jeffreylanters/react-unity-webgl) &middot;
+[**Library Repository**](https://github.com/jeffreylanters/react-unity-webgl) &middot;
 [**Example Video**](https://raw.githubusercontent.com/jeffreylanters/react-unity-webgl/master/wiki/resources/demo.gif) &middot;
 [**Buy me a Coffee**](https://paypal.me/jeffreylanters)
 **&Gt;**
