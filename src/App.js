@@ -1,7 +1,10 @@
 import React from "react";
 import Unity, { UnityContent } from "react-unity-webgl";
 
-const content = new UnityContent("", "");
+const content = new UnityContent(
+  "unity_project_build/Build.json",
+  "unity_project_build/UnityLoader.js"
+);
 
 function App() {
   return (
