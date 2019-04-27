@@ -1,17 +1,17 @@
-﻿using UnityEngine;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
+using UnityEngine;
 
 public class CrateController : MonoBehaviour {
 
 	private float rotationSpeed = 30;
 	private bool isRotating = true;
 
-	[DllImport("__Internal")]
-	private static extern void SendRotation(float rotation);
+	[DllImport ("__Internal")]
+	private static extern void SendRotation (float rotation);
 
 	private void Update () {
 		if (this.isRotating == true) {
-			this.transform.Rotate(new Vector3(0, this.rotationSpeed * Time.deltaTime));
+			this.transform.Rotate (new Vector3 (0, this.rotationSpeed * Time.deltaTime));
 			SendRotation (this.transform.localEulerAngles.y);
 		}
 	}
