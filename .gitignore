@@ -1,5 +1,5 @@
 node_modules
-dist
+distribution
 .DS_Store
 unity_project/**/[Ll]ibrary/
 unity_project/**/[Tt]emp/
