@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.speed = 30;
-    this.state = { rotation: 0 };
+    this.state = { rotation: 0, unityShouldBeMounted: true };
 
     this.unityContent = new UnityContent(
       "unity_project_build/Build.json",
@@ -42,6 +42,10 @@ class App extends React.Component {
     this.unityContent.send("mesh-crate", "SetRotationSpeed", this.speed);
   }
 
+  onClickUnount() {
+    this.setState({ unityShouldBeMounted: false });
+  }
+
   render() {
     return (
       <div>
@@ -55,7 +59,12 @@ class App extends React.Component {
         <button onClick={this.onClickUpdateSpeed.bind(this, -10)}>
           {"Slower"}
         </button>
-        <Unity unityContent={this.unityContent} />
+        <button onClick={this.onClickUnount.bind(this)}>
+          {"Unmount (2019.1=>)"}
+        </button>
+        {this.state.unityShouldBeMounted === true && (
+          <Unity unityContent={this.unityContent} />
+        )}
       </div>
     );
   }
