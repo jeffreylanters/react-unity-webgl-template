@@ -1,8 +1,8 @@
 ﻿mergeInto(LibraryManager.library, {
-  SendRotation: function(rotation) {
-    ReactUnityWebGL.SendRotation(rotation);
+  RotationDidUpdate: function(degrees) {
+    ReactUnityWebGL.RotationDidUpdate(degrees);
   },
-  SendMessage: function(message) {
-    ReactUnityWebGL.SendMessage(message);
+  Say: function(message) {
+    ReactUnityWebGL.Say(message);
   }
 });
