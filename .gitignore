@@ -1,3 +1,5 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
 # dependencies
 /node_modules
 /.pnp
@@ -20,28 +22,29 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+
 # Unity
-unity_project/**/[Ll]ibrary/
-unity_project/**/[Tt]emp/
-unity_project/**/ProjectSettings/
-unity_project/**/UnityPackageManager/
-unity_project/**/[Oo]bj/
-unity_project/**/Assets/AssetStoreTools*
-unity_project/**/.vs/
-unity_project/**/ExportedObj/
-unity_project/**/.consulo/
-unity_project/**/*.csproj
-unity_project/**/*.unityproj
-unity_project/**/*.sln
-unity_project/**/*.suo
-unity_project/**/*.tmp
-unity_project/**/*.user
-unity_project/**/*.userprefs
-unity_project/**/*.pidb
-unity_project/**/*.booproj
-unity_project/**/*.svd
-unity_project/**/*.pdb
-unity_project/**/*.opendb
-unity_project/**/*.pidb.meta
-unity_project/**/*.pdb.meta
-unity_project/**/sysinfo.txt
+/unity_project/**/[Ll]ibrary/
+/unity_project/**/[Tt]emp/
+/unity_project/**/ProjectSettings/
+/unity_project/**/UnityPackageManager/
+/unity_project/**/[Oo]bj/
+/unity_project/**/Assets/AssetStoreTools*
+/unity_project/**/.vs/
+/unity_project/**/ExportedObj/
+/unity_project/**/.consulo/
+/unity_project/**/*.csproj
+/unity_project/**/*.unityproj
+/unity_project/**/*.sln
+/unity_project/**/*.suo
+/unity_project/**/*.tmp
+/unity_project/**/*.user
+/unity_project/**/*.userprefs
+/unity_project/**/*.pidb
+/unity_project/**/*.booproj
+/unity_project/**/*.svd
+/unity_project/**/*.pdb
+/unity_project/**/*.opendb
+/unity_project/**/*.pidb.meta
+/unity_project/**/*.pdb.meta
+/unity_project/**/sysinfo.txt
