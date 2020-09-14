@@ -1,6 +1,6 @@
 # React Unity WebGL Test
 
-Howdy amd welcome to the React Unity WebGL Test repository! 🤠
+Howdy and welcome to the React Unity WebGL Test repository! 🤠
 
 In this repository you'll find everything you'll need for testing and playing with the React Unity WebGL module. This repository is buildt using Create React App for a most basic boilerplate. Among this you'll find three directories;
 
