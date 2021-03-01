@@ -17,7 +17,6 @@ class App extends Component {
       frameworkUrl: "/build/myunityapp.framework.js",
       dataUrl: "/build/myunityapp.data",
       loaderUrl: "/build/myunityapp.loader.js",
-      devicePixelRatio: 2,
     });
     this.unityContext.on("RotationDidUpdate", (degrees) => {
       this.setState({ degrees: Math.round(degrees) });
@@ -68,7 +67,11 @@ class App extends Component {
         />
         <div>
           {this.state.showUnity === true ? (
-            <Unity width={"100%"} unityContext={this.unityContext} />
+            <Unity
+              width={"100%"}
+              unityContext={this.unityContext}
+              devicePixelRatio={1}
+            />
           ) : (
             <div />
           )}
