@@ -17,6 +17,7 @@ class App extends Component {
       frameworkUrl: "/build/myunityapp.framework.js",
       dataUrl: "/build/myunityapp.data",
       loaderUrl: "/build/myunityapp.loader.js",
+      devicePixelRatio: 2,
     });
     this.unityContext.on("RotationDidUpdate", (degrees) => {
       this.setState({ degrees: Math.round(degrees) });
