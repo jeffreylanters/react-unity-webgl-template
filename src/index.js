@@ -8,6 +8,7 @@ class App extends Component {
     super();
     this.speed = 30;
     this.state = {
+      progression: 0,
       degrees: 0,
       message: "-",
       showUnity: true,
@@ -24,11 +25,15 @@ class App extends Component {
     this.unityContext.on("Say", (message) => {
       this.setState({ message });
     });
+    this.unityContext.on("progress", (progression: number) => {
+      this.setState({ progression });
+    });
   }
   render() {
     return (
       <Fragment>
         <h1>React UnityWebGL</h1>
+        <p>Loading: {this.state.progression * 100}%...</p>
         <p>Rotation {this.state.degrees}deg</p>
         <p>Last Said {this.state.message}</p>
         <button
@@ -68,7 +73,11 @@ class App extends Component {
         <div>
           {this.state.showUnity === true ? (
             <Unity
-              width={"100%"}
+              style={{
+                width: "600px",
+                height: "400px",
+                border: "2px solid black",
+              }}
               unityContext={this.unityContext}
               devicePixelRatio={1}
             />
