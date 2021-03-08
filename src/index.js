@@ -75,8 +75,9 @@ class App extends Component {
             <Unity
               style={{
                 width: "600px",
-                height: "400px",
+                height: 400,
                 border: "2px solid black",
+                background: "grey",
               }}
               unityContext={this.unityContext}
               devicePixelRatio={1}
