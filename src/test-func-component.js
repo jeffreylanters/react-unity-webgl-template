@@ -17,6 +17,9 @@ unityContext.on("Say", (message) => {
 unityContext.on("progress", (progression) => {
   console.log({ progression });
 });
+unityContext.on("canvas", (canvas) => {
+  console.log({ canvas });
+});
 
 export const TestFuncComponent = () => {
   return (
@@ -34,6 +37,7 @@ export const TestFuncComponent = () => {
       <Unity
         unityContext={unityContext}
         devicePixelRatio={1}
+        matchWebGLToCanvasSize={false}
         style={{
           width: "600px",
           height: 400,
