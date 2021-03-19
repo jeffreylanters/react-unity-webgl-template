@@ -7,6 +7,7 @@ export class TestClassComponent extends Component {
     this.speed = 30;
     this.state = {
       progression: 0,
+      isLoaded: false,
       degrees: 0,
       message: "-",
       showUnity: true,
@@ -30,6 +31,9 @@ export class TestClassComponent extends Component {
     });
     this.unityContext.on("progress", (progression) => {
       this.setState({ progression });
+    });
+    this.unityContext.on("loaded", () => {
+      this.setState({ isLoaded: true });
     });
   }
   render() {
@@ -77,6 +81,7 @@ export class TestClassComponent extends Component {
                 height: 400,
                 border: "2px solid black",
                 background: "grey",
+                visibility: this.state.isLoaded ? "visible" : "hidden",
               }}
               unityContext={this.unityContext}
               devicePixelRatio={1}
