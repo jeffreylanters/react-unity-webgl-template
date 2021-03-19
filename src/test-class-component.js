@@ -10,6 +10,8 @@ export class TestClassComponent extends Component {
       degrees: 0,
       message: "-",
       showUnity: true,
+      clickedPositionX: 0,
+      clickedPositionY: 0,
     };
     this.unityContext = new UnityContext({
       codeUrl: "/build/myunityapp.wasm",
@@ -23,6 +25,9 @@ export class TestClassComponent extends Component {
     this.unityContext.on("Say", (message) => {
       this.setState({ message });
     });
+    this.unityContext.on("ClickedPosition", (x, y) => {
+      this.setState({ clickedPositionX: x, clickedPositionY: y });
+    });
     this.unityContext.on("progress", (progression) => {
       this.setState({ progression });
     });
@@ -34,34 +39,30 @@ export class TestClassComponent extends Component {
         <p>Loading: {this.state.progression * 100}%...</p>
         <p>Rotation {this.state.degrees}deg</p>
         <p>Last Said {this.state.message}</p>
+        <p>
+          Last Clicked Position {this.state.clickedPositionX},
+          {this.state.clickedPositionY}
+        </p>
         <button
           children={"Start Rotation"}
-          onClick={() => this.unityContext.send("mesh-crate", "StartRotation")}
+          onClick={() => this.unityContext.send("MeshCrate", "StartRotation")}
         />
         <button
           children={"Stop Rotation"}
-          onClick={() => this.unityContext.send("mesh-crate", "StopRotation")}
+          onClick={() => this.unityContext.send("MeshCrate", "StopRotation")}
         />
         <button
           children={"Faster Rotation"}
           onClick={() => {
             this.speed += 5;
-            this.unityContext.send(
-              "mesh-crate",
-              "SetRotationSpeed",
-              this.speed
-            );
+            this.unityContext.send("MeshCrate", "SetRotationSpeed", this.speed);
           }}
         />
         <button
           children={"Slower Rotation"}
           onClick={() => {
             this.speed -= 5;
-            this.unityContext.send(
-              "mesh-crate",
-              "SetRotationSpeed",
-              this.speed
-            );
+            this.unityContext.send("MeshCrate", "SetRotationSpeed", this.speed);
           }}
         />
         <button

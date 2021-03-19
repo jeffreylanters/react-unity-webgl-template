@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { TestFuncComponent } from "./test-func-component";
-// import { TestClassComponent } from "./test-class-component";
+import { TestClassComponent } from "./test-class-component";
 
 class App extends Component {
   render() {
-    return <TestFuncComponent />;
-    // return <TestClassComponent />;
+    // return <TestFuncComponent />;
+    return <TestClassComponent />;
   }
 }
 

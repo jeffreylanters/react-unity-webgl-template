@@ -20,6 +20,9 @@ unityContext.on("progress", (progression) => {
 unityContext.on("canvas", (canvas) => {
   console.log({ canvas });
 });
+unityContext.on("ClickedPosition", (x, y) => {
+  console.log({ x, y });
+});
 
 export const TestFuncComponent = () => {
   return (
@@ -27,11 +30,11 @@ export const TestFuncComponent = () => {
       <div>
         <button
           children={"Start Rotation"}
-          onClick={() => unityContext.send("mesh-crate", "StartRotation")}
+          onClick={() => unityContext.send("MeshCrate", "StartRotation")}
         />
         <button
           children={"Stop Rotation"}
-          onClick={() => unityContext.send("mesh-crate", "StopRotation")}
+          onClick={() => unityContext.send("MeshCrate", "StopRotation")}
         />
       </div>
       <Unity
