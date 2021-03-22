@@ -23,7 +23,7 @@ export class TestClassComponent extends Component {
     this.unityContext.on("RotationDidUpdate", (degrees) => {
       this.setState({ degrees: Math.round(degrees) });
     });
-    this.unityContext.on("Say", (message) => {
+    this.unityContext.on("Sayx", (message) => {
       this.setState({ message });
     });
     this.unityContext.on("ClickedPosition", (x, y) => {
@@ -34,6 +34,12 @@ export class TestClassComponent extends Component {
     });
     this.unityContext.on("loaded", () => {
       this.setState({ isLoaded: true });
+    });
+    this.unityContext.on("error", (message) => {
+      console.log("AN ERROR OCCURED", message);
+    });
+    this.unityContext.on("debug", (message) => {
+      console.log("GOT A LOG", message);
     });
   }
   render() {
