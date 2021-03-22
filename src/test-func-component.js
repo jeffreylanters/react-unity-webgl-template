@@ -8,6 +8,8 @@ const unityContext = new UnityContext({
   codeUrl: "build/myunityapp.wasm",
 });
 
+window.u = unityContext;
+
 unityContext.on("RotationDidUpdate", (degrees) => {
   console.log({ degrees });
 });
@@ -22,6 +24,12 @@ unityContext.on("canvas", (canvas) => {
 });
 unityContext.on("ClickedPosition", (x, y) => {
   console.log({ x, y });
+});
+unityContext.on("error", (message) => {
+  console.log("An error!", message);
+});
+unityContext.on("log", (message) => {
+  console.log("A message!", message);
 });
 
 export const TestFuncComponent = () => {
@@ -39,7 +47,7 @@ export const TestFuncComponent = () => {
       </div>
       <Unity
         unityContext={unityContext}
-        devicePixelRatio={1}
+        // devicePixelRatio={1}
         matchWebGLToCanvasSize={false}
         style={{
           width: "600px",

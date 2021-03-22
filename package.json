@@ -1,6 +1,6 @@
 {
   "name": "react-unity-webgl-test",
-  "version": "8.2.4",
+  "version": "8.3.0",
   "author": "Jeffrey Lanters",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -9,7 +9,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
-    "react-unity-webgl": "file:../react-unity-webgl/react-unity-webgl-8.2.4.tgz"
+    "react-unity-webgl": "file:../react-unity-webgl/react-unity-webgl-8.2.7.tgz"
   },
   "scripts": {
     "start": "react-scripts start",

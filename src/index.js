@@ -5,8 +5,8 @@ import { TestClassComponent } from "./test-class-component";
 
 class App extends Component {
   render() {
-    // return <TestFuncComponent />;
-    return <TestClassComponent />;
+    return <TestFuncComponent />;
+    // return <TestClassComponent />;
   }
 }
 
