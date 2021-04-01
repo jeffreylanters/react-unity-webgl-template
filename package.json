@@ -9,7 +9,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
-    "react-unity-webgl": "file:../react-unity-webgl/react-unity-webgl-8.3.0.tgz"
+    "react-unity-webgl": "file:../react-unity-webgl/react-unity-webgl-8.3.2.tgz"
   },
   "scripts": {
     "start": "react-scripts start",
