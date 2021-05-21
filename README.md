@@ -10,6 +10,6 @@ In this repository you'll find everything you'll need for testing and playing wi
 
 **Important** The React Unity WebGL module is NOT provided in this repository and should be build manually. For more details on building the module please head over to the React Unity WebGL [Documentation](https://github.com/jeffreylanters/react-unity-webgl#contribution-and-development) for further details on contribution, development and testing. If you don't want to do this yourself, simply remove react-unity-webgl entry from the package.json and install it using `npm install react-unity-webgl`.
 
-[Issues](https://github.com/jeffreylanters/react-unity-webgl/issues) and (discussions)[https://github.com/jeffreylanters/react-unity-webgl/discussions] can be held on the core repository.
+[Issues](https://github.com/jeffreylanters/react-unity-webgl/issues) and [discussions](https://github.com/jeffreylanters/react-unity-webgl/discussions) can be held on the core repository.
 
 Happy coding!
