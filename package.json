@@ -1,21 +1,16 @@
 {
   "name": "react-unity-webgl-test",
-  "version": "8.3.0",
+  "version": "8.3.9",
   "author": "Jeffrey Lanters",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-scripts": "4.0.3",
     "react-unity-webgl": "file:../react-unity-webgl/react-unity-webgl-8.3.9.tgz"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
