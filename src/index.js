@@ -10,10 +10,9 @@ const unityContext = new UnityContext({
   codeUrl: "build/myunityapp.wasm",
 });
 
-window.ctx = unityContext;
-
 function App() {
-  const [isLoaded, setLoaded] = useState(false);
+  const [isUnityMounted, setIsUnityMounted] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [progression, setProgression] = useState(0);
   const [rotation, setRotation] = useState(0);
   const [message, setMessage] = useState("");
@@ -22,7 +21,7 @@ function App() {
   useEffect(function () {
     unityContext.on("progress", setProgression);
     unityContext.on("loaded", function () {
-      setLoaded(true);
+      setIsLoaded(true);
     });
     unityContext.on("error", function (message) {
       console.log("An error!", message);
@@ -48,6 +47,10 @@ function App() {
     unityContext.send("MeshCrate", "StopRotation");
   }
 
+  function toggleIsUnityMounted() {
+    setIsUnityMounted(!isUnityMounted);
+  }
+
   return (
     <Fragment>
       <h1>React Unity WebGL Test</h1>
@@ -60,17 +63,20 @@ function App() {
       </p>
       <button children={"Start Rotation"} onClick={startRotation} />
       <button children={"Stop Rotation"} onClick={stopRotation} />
+      <button children={"(Un)mount"} onClick={toggleIsUnityMounted} />
       <br />
-      <Unity
-        unityContext={unityContext}
-        matchWebGLToCanvasSize={false}
-        style={{
-          width: "600px",
-          height: 400,
-          border: "2px solid black",
-          background: "grey",
-        }}
-      />
+      {isUnityMounted === true && (
+        <Unity
+          unityContext={unityContext}
+          matchWebGLToCanvasSize={false}
+          style={{
+            width: "600px",
+            height: 400,
+            border: "2px solid black",
+            background: "grey",
+          }}
+        />
+      )}
     </Fragment>
   );
 }
