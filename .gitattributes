@@ -1,0 +1,2 @@
+# Excludes Public directory from statistics
+public/* linguist-vendored
