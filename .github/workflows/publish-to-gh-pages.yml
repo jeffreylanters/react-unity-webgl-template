@@ -33,13 +33,11 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Publish to GitHub Pages
-        run: |
-          git config --global user.name "${{ github.event.pusher.name }}"
-          git config --global user.email "${{ github.event.pusher.email }}"
-          npm run deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push to Target Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
 
       - name: Create Release
         id: create_release
