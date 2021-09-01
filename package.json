@@ -1,6 +1,6 @@
 {
   "name": "react-unity-webgl-tests",
-  "version": "8.4.10",
+  "version": "1.0.0",
   "description": "An out-of-the-box test environment for the React Unity WebGL package. This test environment contains a Create-React-App including a Source and Build Unity WebGL project allowing testing and debugging all of it's features.",
   "keywords": [
     "React",
