@@ -35,8 +35,8 @@ jobs:
 
       - name: Publish to GitHub Pages
         run: |
-          git config --global user.email "jeffreylanters@me.com"
-          git config --global user.name "Jeffrey Lanters"
+          git config --global user.name "${{ github.event.pusher.name }}"
+          git config --global user.email "${{ github.event.pusher.email }}"
           npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
