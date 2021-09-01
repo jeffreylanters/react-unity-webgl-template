@@ -106,6 +106,7 @@ function App() {
         {isUnityMounted === true && (
           <Fragment>
             <div className="unity-container">
+              {/* TODO add demo loading screen */}
               <Unity className="unity-canvas" unityContext={unityContext} />
             </div>
             {/* Displaying some output values */}
