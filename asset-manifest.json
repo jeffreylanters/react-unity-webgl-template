@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/react-unity-webgl-tests/static/css/main.ce1b84cd.chunk.css",
-    "main.js": "/react-unity-webgl-tests/static/js/main.a970b89a.chunk.js",
-    "main.js.map": "/react-unity-webgl-tests/static/js/main.a970b89a.chunk.js.map",
+    "main.css": "/react-unity-webgl-tests/static/css/main.43a0a820.chunk.css",
+    "main.js": "/react-unity-webgl-tests/static/js/main.4adc3214.chunk.js",
+    "main.js.map": "/react-unity-webgl-tests/static/js/main.4adc3214.chunk.js.map",
     "runtime-main.js": "/react-unity-webgl-tests/static/js/runtime-main.393ed372.js",
     "runtime-main.js.map": "/react-unity-webgl-tests/static/js/runtime-main.393ed372.js.map",
     "static/js/2.37a6599d.chunk.js": "/react-unity-webgl-tests/static/js/2.37a6599d.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.586dd9dc.chunk.js": "/react-unity-webgl-tests/static/js/3.586dd9dc.chunk.js",
     "static/js/3.586dd9dc.chunk.js.map": "/react-unity-webgl-tests/static/js/3.586dd9dc.chunk.js.map",
     "index.html": "/react-unity-webgl-tests/index.html",
-    "static/css/main.ce1b84cd.chunk.css.map": "/react-unity-webgl-tests/static/css/main.ce1b84cd.chunk.css.map",
+    "static/css/main.43a0a820.chunk.css.map": "/react-unity-webgl-tests/static/css/main.43a0a820.chunk.css.map",
     "static/js/2.37a6599d.chunk.js.LICENSE.txt": "/react-unity-webgl-tests/static/js/2.37a6599d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.393ed372.js",
     "static/js/2.37a6599d.chunk.js",
-    "static/css/main.ce1b84cd.chunk.css",
-    "static/js/main.a970b89a.chunk.js"
+    "static/css/main.43a0a820.chunk.css",
+    "static/js/main.4adc3214.chunk.js"
   ]
 }
