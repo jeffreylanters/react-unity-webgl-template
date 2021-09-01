@@ -34,7 +34,10 @@ jobs:
         run: npm run build
 
       - name: Publish to GitHub Pages
-        run: npm run deploy
+        run: |
+          git config --global user.email "jeffreylanters@me.com"
+          git config --global user.name "Jeffrey Lanters"
+          npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
