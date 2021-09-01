@@ -4,8 +4,8 @@
 
 [![license](https://img.shields.io/badge/license-Apache_2.0-red.svg?style=for-the-badge)](https://github.com/jeffreylanters/react-unity-webgl-tests/blob/master/LICENSE.md)
 [![npm](https://img.shields.io/npm/v/react-unity-webgl.svg?style=for-the-badge)](https://www.npmjs.com/package/react-unity-webgl)
-[![build](https://img.shields.io/github/workflow/status/jeffreylanters/react-unity-webgl/Pre-Compile%20and%20Lint?style=for-the-badge)](https://github.com/jeffreylanters/react-unity-webgl-tests/actions)
-[![deployment](https://img.shields.io/github/deployments/jeffreylanters/react-unity-webgl/gh-pages?style=for-the-badge)](https://github.com/jeffreylanters/react-unity-webgl/deployments/activity_log?environment=Node+Package+Registry)
+[![build](https://img.shields.io/github/workflow/status/jeffreylanters/react-unity-webgl-tests/Pre-Compile%20and%20Lint?style=for-the-badge)](https://github.com/jeffreylanters/react-unity-webgl-tests/actions)
+[![deployment](https://img.shields.io/github/deployments/jeffreylanters/react-unity-webgl-tests/github-pages?style=for-the-badge)](https://github.com/jeffreylanters/react-unity-webgl-tests/deployments/activity_log?environment=github-pages)
 [![stars](https://img.shields.io/github/stars/jeffreylanters/react-unity-webgl.svg?style=for-the-badge&color=fe8523&label=stargazers)](https://github.com/jeffreylanters/react-unity-webgl/stargazers)
 [![downloads](https://img.shields.io/npm/dt/react-unity-webgl.svg?style=for-the-badge&color=40AA72)](https://www.npmtrends.com/react-unity-webgl)
 [![size](https://img.shields.io/bundlephobia/minzip/react-unity-webgl?style=for-the-badge&label=size)](https://bundlephobia.com/result?p=react-unity-webgl)
@@ -15,7 +15,7 @@
 An out-of-the-box test environment for the React Unity WebGL package. This test environment contains a Create-React-App including a Source and Build Unity WebGL project allowing testing and debugging all of it's features.
 
 [**Documentation**](#documentation) &middot;
-[**Module Repository**](https://github.com/jeffreylanters/react-unity-webgl-test) &middot;
+[**Module Repository**](https://github.com/jeffreylanters/react-unity-webgl) &middot;
 [**Buy me a Coffee**](https://github.com/sponsors/jeffreylanters) &middot;
 [**Discussion Board**](https://github.com/jeffreylanters/react-unity-webgl/discussions)
 
