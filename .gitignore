@@ -26,6 +26,7 @@ yarn-error.log*
 /project/**/ProjectSettings/
 /project/**/UnityPackageManager/
 /project/**/[Oo]bj/
+/project/**/[Ll]ogs/
 /project/**/Assets/AssetStoreTools*
 /project/**/.vs/
 /project/**/ExportedObj/
