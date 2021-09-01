@@ -7,7 +7,7 @@ on:
 
 jobs:
   main:
-    name: Publish to NPM
+    name: Publish to GitHub Pages
 
     runs-on: ubuntu-latest
 
