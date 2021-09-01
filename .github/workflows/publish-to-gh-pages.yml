@@ -11,10 +11,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    environment:
-      name: Node Package Registry
-      url: https://npmjs.com/react-unity-webgl
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
