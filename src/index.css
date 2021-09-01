@@ -26,3 +26,12 @@ button:hover {
 button:active {
   background: #7c7c7c;
 }
+
+h6 {
+  font-weight: normal;
+  color: #7c7c7c;
+}
+
+a {
+  color: #158bda;
+}

@@ -91,7 +91,7 @@ function App() {
     <Fragment>
       <div className="wrapper">
         {/* Introduction text */}
-        <h1>React Unity WebGL Test</h1>
+        <h1>React Unity WebGL Tests</h1>
         <p>
           In this React Application we'll explore the possibilities with the
           React Unity WebGL Module. Use the built-in events, custom events,
@@ -112,12 +112,16 @@ function App() {
             <p>
               The cube is rotated <b>{cubeRotation}</b> degrees
               <br />
-              Clicked at <b>x {clickPosition.x}</b>, <b>y {clickPosition.y}</b>
-              <br />
               The Unity app said <b>"{saidMessage}"</b>!
+              <br />
+              Clicked at <b>x{clickPosition.x}</b>, <b>y{clickPosition.y}</b>
             </p>
           </Fragment>
         )}
+        <h6>
+          Made with love by{" "}
+          <a href="https://github.com/jeffreylanters">Jeffrey Lanters</a>
+        </h6>
       </div>
     </Fragment>
   );
