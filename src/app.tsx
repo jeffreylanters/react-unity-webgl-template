@@ -9,10 +9,13 @@ interface Vector2 {
 
 // This is the context that Unity will use to communicate with the React app.
 const unityContext = new UnityContext({
-  loaderUrl: "unitybuild/myunityapp.loader.js",
-  dataUrl: "unitybuild/myunityapp.data",
-  frameworkUrl: "unitybuild/myunityapp.framework.js",
-  codeUrl: "unitybuild/myunityapp.wasm",
+  loaderUrl: "./unitybuild/myunityapp.loader.js",
+  dataUrl: "./unitybuild/myunityapp.data",
+  frameworkUrl: "./unitybuild/myunityapp.framework.js",
+  codeUrl: "./unitybuild/myunityapp.wasm",
+  webglContextAttributes: {
+    preserveDrawingBuffer: true,
+  },
 });
 
 // This is the React component that will be rendering the Unity app.
@@ -44,6 +47,9 @@ function App() {
 
   // Built-in event invoked when the Unity canvas is ready to be interacted with.
   function handleOnUnityCanvas(canvas: HTMLCanvasElement) {
+    const context = canvas.getContext("webgl");
+    const contextAttributes = context?.getContextAttributes();
+    console.log(contextAttributes);
     canvas.setAttribute("role", "unityCanvas");
   }
 
