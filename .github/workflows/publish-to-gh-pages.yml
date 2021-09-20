@@ -31,7 +31,7 @@ jobs:
         run: npm install
 
       - name: Build Project
-        run: npm run build
+        run: npm run build:gh-pages
 
       - name: Push to Target Branch
         uses: peaceiris/actions-gh-pages@v3

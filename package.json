@@ -48,6 +48,7 @@
   "scripts": {
     "start": "PUBLIC_URL=/ react-scripts start",
     "build": "PUBLIC_URL=/ react-scripts build",
+    "build:gh-pages": "PUBLIC_URL=/react-unity-webgl-tests/ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
