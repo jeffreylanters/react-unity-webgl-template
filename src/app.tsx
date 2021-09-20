@@ -9,10 +9,10 @@ interface Vector2 {
 
 // This is the context that Unity will use to communicate with the React app.
 const unityContext = new UnityContext({
-  loaderUrl: "./unitybuild/myunityapp.loader.js",
-  dataUrl: "./unitybuild/myunityapp.data",
-  frameworkUrl: "./unitybuild/myunityapp.framework.js",
-  codeUrl: "./unitybuild/myunityapp.wasm",
+  loaderUrl: "unitybuild/myunityapp.loader.js",
+  dataUrl: "unitybuild/myunityapp.data",
+  frameworkUrl: "unitybuild/myunityapp.framework.js",
+  codeUrl: "unitybuild/myunityapp.wasm",
   webglContextAttributes: {
     preserveDrawingBuffer: true,
   },
