@@ -65,7 +65,7 @@
     "react-scripts": "4.0.3",
     "react-unity-webgl": "latest",
     "typescript": "4.4.2",
-    "web-vitals": "1.1.2"
+    "web-vitals": "2.1.0"
   },
   "eslintConfig": {
     "extends": [
