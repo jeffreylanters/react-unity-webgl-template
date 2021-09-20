@@ -9,10 +9,16 @@ interface Vector2 {
 
 // This is the context that Unity will use to communicate with the React app.
 const unityContext = new UnityContext({
+  productName: "React Unity WebGL Tests",
+  companyName: "Jeffrey Lanters",
+  // The url's of the Unity WebGL runtime, these paths are public and should be
+  // accessible from the internet and relative to the index.html.
   loaderUrl: "unitybuild/myunityapp.loader.js",
   dataUrl: "unitybuild/myunityapp.data",
   frameworkUrl: "unitybuild/myunityapp.framework.js",
   codeUrl: "unitybuild/myunityapp.wasm",
+  streamingAssetsUrl: "unitybuild/streamingassets",
+  // Additional configuration options.
   webglContextAttributes: {
     preserveDrawingBuffer: true,
   },
@@ -26,10 +32,13 @@ function App() {
   const [cubeRotation, setCubeRotation] = useState<number>(0);
   const [clickPosition, setClickPosition] = useState<Vector2>({ x: 0, y: 0 });
   const [saidMessage, setSaidMessage] = useState<string>("Nothing");
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [progression, setProgression] = useState<number>(0);
 
   // When the component is mounted, we'll register some event listener.
   useEffect(() => {
     unityContext.on("canvas", handleOnUnityCanvas);
+    unityContext.on("progress", handleOnUnityProgress);
     unityContext.on("loaded", handleOnUnityLoaded);
     unityContext.on("RotationDidUpdate", handleOnUnityRotationDidUpdate);
     unityContext.on("ClickedPosition", handleOnUnityClickedPosition);
@@ -53,9 +62,14 @@ function App() {
     canvas.setAttribute("role", "unityCanvas");
   }
 
+  // Built-in event invoked when the Unity app's progress has changed.
+  function handleOnUnityProgress(progression: number) {
+    setProgression(progression);
+  }
+
   // Built-in event invoked when the Unity app is loaded.
   function handleOnUnityLoaded() {
-    console.log("Unity loaded");
+    setIsLoaded(true);
   }
 
   // Custom event invoked when the Unity app sends a message indicating that the
@@ -112,7 +126,16 @@ function App() {
         {isUnityMounted === true && (
           <Fragment>
             <div className="unity-container">
-              {/* TODO add demo loading screen */}
+              {isLoaded === false && (
+                <div className="loading-overlay">
+                  <div className="progress-bar">
+                    <div
+                      className="progress-bar-fill"
+                      style={{ width: progression * 100 + "%" }}
+                    />
+                  </div>
+                </div>
+              )}
               <Unity className="unity-canvas" unityContext={unityContext} />
             </div>
             {/* Displaying some output values */}
