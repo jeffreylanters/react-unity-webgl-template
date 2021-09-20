@@ -103,7 +103,10 @@ function App() {
   // Event invoked when the user clicks the button, the unity container will be
   // mounted or unmounted depending on the current mounting state.
   function handleOnClickUnMountUnity() {
-    setIsUnityMounted(!isUnityMounted);
+    if (isLoaded === true) {
+      setIsLoaded(false);
+    }
+    setIsUnityMounted(isUnityMounted === false);
   }
 
   // This is the React component that will be rendering the Unity app.
@@ -122,10 +125,11 @@ function App() {
         <button onClick={handleOnClickUnMountUnity}>(Un)mount Unity</button>
         <button onClick={handleOnClickIncreaseSpeed}>Increase speed</button>
         <button onClick={handleOnClickDecreaseSpeed}>Decrease speed</button>
-        {/* The Unity app */}
+        {/* The Unity container */}
         {isUnityMounted === true && (
           <Fragment>
             <div className="unity-container">
+              {/* The loading screen will be displayed here. */}
               {isLoaded === false && (
                 <div className="loading-overlay">
                   <div className="progress-bar">
@@ -136,6 +140,7 @@ function App() {
                   </div>
                 </div>
               )}
+              {/* The Unity app will be rendered here. */}
               <Unity className="unity-canvas" unityContext={unityContext} />
             </div>
             {/* Displaying some output values */}
