@@ -3,18 +3,18 @@
     "main.css": "/react-unity-webgl-tests/static/css/main.185805b6.chunk.css",
     "main.js": "/react-unity-webgl-tests/static/js/main.be5bbb6c.chunk.js",
     "main.js.map": "/react-unity-webgl-tests/static/js/main.be5bbb6c.chunk.js.map",
-    "runtime-main.js": "/react-unity-webgl-tests/static/js/runtime-main.499faf08.js",
-    "runtime-main.js.map": "/react-unity-webgl-tests/static/js/runtime-main.499faf08.js.map",
+    "runtime-main.js": "/react-unity-webgl-tests/static/js/runtime-main.9f34c7b4.js",
+    "runtime-main.js.map": "/react-unity-webgl-tests/static/js/runtime-main.9f34c7b4.js.map",
     "static/js/2.ac8f96b4.chunk.js": "/react-unity-webgl-tests/static/js/2.ac8f96b4.chunk.js",
     "static/js/2.ac8f96b4.chunk.js.map": "/react-unity-webgl-tests/static/js/2.ac8f96b4.chunk.js.map",
-    "static/js/3.02f42d30.chunk.js": "/react-unity-webgl-tests/static/js/3.02f42d30.chunk.js",
-    "static/js/3.02f42d30.chunk.js.map": "/react-unity-webgl-tests/static/js/3.02f42d30.chunk.js.map",
+    "static/js/3.9ca6bf19.chunk.js": "/react-unity-webgl-tests/static/js/3.9ca6bf19.chunk.js",
+    "static/js/3.9ca6bf19.chunk.js.map": "/react-unity-webgl-tests/static/js/3.9ca6bf19.chunk.js.map",
     "index.html": "/react-unity-webgl-tests/index.html",
     "static/css/main.185805b6.chunk.css.map": "/react-unity-webgl-tests/static/css/main.185805b6.chunk.css.map",
     "static/js/2.ac8f96b4.chunk.js.LICENSE.txt": "/react-unity-webgl-tests/static/js/2.ac8f96b4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.499faf08.js",
+    "static/js/runtime-main.9f34c7b4.js",
     "static/js/2.ac8f96b4.chunk.js",
     "static/css/main.185805b6.chunk.css",
     "static/js/main.be5bbb6c.chunk.js"
