@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-unity-webgl-tests/static/css/main.185805b6.chunk.css",
-    "main.js": "/react-unity-webgl-tests/static/js/main.8f4a8a70.chunk.js",
-    "main.js.map": "/react-unity-webgl-tests/static/js/main.8f4a8a70.chunk.js.map",
+    "main.js": "/react-unity-webgl-tests/static/js/main.a017e5cc.chunk.js",
+    "main.js.map": "/react-unity-webgl-tests/static/js/main.a017e5cc.chunk.js.map",
     "runtime-main.js": "/react-unity-webgl-tests/static/js/runtime-main.9d7da25d.js",
     "runtime-main.js.map": "/react-unity-webgl-tests/static/js/runtime-main.9d7da25d.js.map",
     "static/js/2.2f43b386.chunk.js": "/react-unity-webgl-tests/static/js/2.2f43b386.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.9d7da25d.js",
     "static/js/2.2f43b386.chunk.js",
     "static/css/main.185805b6.chunk.css",
-    "static/js/main.8f4a8a70.chunk.js"
+    "static/js/main.a017e5cc.chunk.js"
   ]
 }
