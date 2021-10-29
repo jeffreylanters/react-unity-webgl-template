@@ -13,11 +13,11 @@ const unityContext = new UnityContext({
   companyName: "Jeffrey Lanters",
   // The url's of the Unity WebGL runtime, these paths are public and should be
   // accessible from the internet and relative to the index.html.
-  loaderUrl: "unitybuild/myunityapp.loader.js",
-  dataUrl: "unitybuild/myunityapp.data",
-  frameworkUrl: "unitybuild/myunityapp.framework.js",
-  codeUrl: "unitybuild/myunityapp.wasm",
-  streamingAssetsUrl: "unitybuild/streamingassets",
+  loaderUrl: "unitybuild/2021.2/myunityapp.loader.js",
+  dataUrl: "unitybuild/2021.2/myunityapp.data",
+  frameworkUrl: "unitybuild/2021.2/myunityapp.framework.js",
+  codeUrl: "unitybuild/2021.2/myunityapp.wasm",
+  streamingAssetsUrl: "unitybuild/2021.2/streamingassets",
   // Additional configuration options.
   webglContextAttributes: {
     preserveDrawingBuffer: true,
