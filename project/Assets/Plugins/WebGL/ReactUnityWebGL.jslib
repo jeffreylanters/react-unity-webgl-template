@@ -1,11 +1,11 @@
 ﻿mergeInto(LibraryManager.library, {
   RotationDidUpdate: function (degrees) {
-    ReactUnityWebGL.RotationDidUpdate(degrees);
+    dispatchReactUnityEvent("RotationDidUpdate", degrees);
   },
   Say: function (message) {
-    ReactUnityWebGL.Say(Pointer_stringify(message));
+    dispatchReactUnityEvent("Say", Pointer_stringify(message));
   },
   ClickedPosition: function (x, y) {
-    ReactUnityWebGL.ClickedPosition(x, y);
+    dispatchReactUnityEvent("ClickedPosition", x, y);
   }
 });
