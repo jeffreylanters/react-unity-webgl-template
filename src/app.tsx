@@ -56,9 +56,6 @@ function App() {
 
   // Built-in event invoked when the Unity canvas is ready to be interacted with.
   function handleOnUnityCanvas(canvas: HTMLCanvasElement) {
-    const context = canvas.getContext("webgl");
-    const contextAttributes = context?.getContextAttributes();
-    console.log(contextAttributes);
     canvas.setAttribute("role", "unityCanvas");
   }
 
