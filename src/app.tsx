@@ -1,31 +1,35 @@
 import "./app.css";
 import { Fragment, useEffect, useState } from "react";
-import Unity, { UnityContext } from "react-unity-webgl";
+import { Unity, useUnityContext } from "react-unity-webgl";
 
 interface Vector2 {
   x: number;
   y: number;
 }
 
-// This is the context that Unity will use to communicate with the React app.
-const unityContext = new UnityContext({
-  productName: "React Unity WebGL Tests",
-  companyName: "Jeffrey Lanters",
-  // The url's of the Unity WebGL runtime, these paths are public and should be
-  // accessible from the internet and relative to the index.html.
-  loaderUrl: "unitybuild/2020.1/myunityapp.loader.js",
-  dataUrl: "unitybuild/2020.1/myunityapp.data",
-  frameworkUrl: "unitybuild/2020.1/myunityapp.framework.js",
-  codeUrl: "unitybuild/2020.1/myunityapp.wasm",
-  streamingAssetsUrl: "unitybuild/2020.1/streamingassets",
-  // Additional configuration options.
-  webglContextAttributes: {
-    preserveDrawingBuffer: true,
-  },
-});
+
 
 // This is the React component that will be rendering the Unity app.
 function App() {
+
+  // This is the context that Unity will use to communicate with the React app.
+  const unityContext = useUnityContext({
+    productName: "React Unity WebGL Tests",
+    companyName: "Jeffrey Lanters",
+    // The url's of the Unity WebGL runtime, these paths are public and should be
+    // accessible from the internet and relative to the index.html.
+    loaderUrl: "unitybuild/2020.1/myunityapp.loader.js",
+    dataUrl: "unitybuild/2020.1/myunityapp.data",
+    frameworkUrl: "unitybuild/2020.1/myunityapp.framework.js",
+    codeUrl: "unitybuild/2020.1/myunityapp.wasm",
+    streamingAssetsUrl: "unitybuild/2020.1/streamingassets",
+    // Additional configuration options.
+    webglContextAttributes: {
+      preserveDrawingBuffer: true,
+    },
+  });
+  const { addEventListener, removeEventListener, sendMessage } = unityContext
+
   // The app's state.
   const [isUnityMounted, setIsUnityMounted] = useState<boolean>(true);
   const [rotationSpeed, setRotationSpeed] = useState<number>(30);
@@ -37,22 +41,27 @@ function App() {
 
   // When the component is mounted, we'll register some event listener.
   useEffect(() => {
-    unityContext.on("canvas", handleOnUnityCanvas);
-    unityContext.on("progress", handleOnUnityProgress);
-    unityContext.on("loaded", handleOnUnityLoaded);
-    unityContext.on("RotationDidUpdate", handleOnUnityRotationDidUpdate);
-    unityContext.on("ClickedPosition", handleOnUnityClickedPosition);
-    unityContext.on("Say", handleOnUnitySayMessage);
-    // When the component is unmounted, we'll unregister the event listener.
-    return function () {
-      unityContext.removeAllEventListeners();
+    addEventListener("canvas", handleOnUnityCanvas);
+    addEventListener("progress", handleOnUnityProgress);
+    addEventListener("loaded", handleOnUnityLoaded);
+    addEventListener("RotationDidUpdate", handleOnUnityRotationDidUpdate);
+    addEventListener("ClickedPosition", handleOnUnityClickedPosition);
+    addEventListener("Say", handleOnUnitySayMessage);
+    return () => {
+      removeEventListener("canvas", handleOnUnityCanvas);
+      removeEventListener("progress", handleOnUnityProgress);
+      removeEventListener("loaded", handleOnUnityLoaded);
+      removeEventListener("RotationDidUpdate", handleOnUnityRotationDidUpdate);
+      removeEventListener("ClickedPosition", handleOnUnityClickedPosition);
+      removeEventListener("Say", handleOnUnitySayMessage);
     };
-  }, []);
+  }, [addEventListener, removeEventListener]);
+
 
   // When the rotation speed has been updated, it will be sent to Unity.
   useEffect(() => {
-    unityContext.send("MeshCrate", "SetRotationSpeed", rotationSpeed);
-  }, [rotationSpeed]);
+    sendMessage("MeshCrate", "SetRotationSpeed", rotationSpeed);
+  }, [rotationSpeed, sendMessage]);
 
   // Built-in event invoked when the Unity canvas is ready to be interacted with.
   function handleOnUnityCanvas(canvas: HTMLCanvasElement) {
@@ -138,7 +147,7 @@ function App() {
                 </div>
               )}
               {/* The Unity app will be rendered here. */}
-              <Unity className="unity-canvas" unityContext={unityContext} />
+              <Unity className="unity-canvas" unityProvider={unityContext.unityProvider} />
             </div>
             {/* Displaying some output values */}
             <p>
