@@ -6,9 +6,6 @@ public class CrateController : MonoBehaviour {
   AudioSource audioSource;
   GameController gameController;
 
-  [DllImport ("__Internal")]
-  static extern void ClickedCrate ();
-
   void Awake () {
     gameController = Object.FindObjectOfType<GameController> ();
     animator = GetComponent<Animator> ();
@@ -22,8 +19,5 @@ public class CrateController : MonoBehaviour {
     gameController.score += 1;
     animator.SetTrigger ("Clicked");
     audioSource.Play ();
-#if UNITY_WEBGL && !UNITY_EDITOR
-    ClickedCrate ();
-#endif
   }
 }

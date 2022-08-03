@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
   public int score;
 
   [DllImport ("__Internal")]
-  static extern void GameOver (int time, int score);
+  static extern void GameOver (float time, int score);
 
 
   void Awake () {
@@ -25,5 +25,11 @@ public class GameController : MonoBehaviour {
       GameOver (time, score);
 #endif
     }
+  }
+
+  public void StartGame (int time) {
+    this.time = time;
+    score = 0;
+    isPlaying = true;
   }
 }
