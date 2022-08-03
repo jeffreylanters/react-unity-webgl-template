@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.container .unityWrapper {
+  background: #cecece;
+  width: 800px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .unityWrapper .loadingBar {
+  background: #8c8c8c;
+  width: 400px;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.container .unityWrapper .loadingBar .loadingBarFill {
+  height: 6px;
+  border-radius: 5px;
+  margin: 2px;
+  background: #ffffff;
+  transition: 0.3s width ease-out;
+}
+
+.container .unityWrapper canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.container .screenshots {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}

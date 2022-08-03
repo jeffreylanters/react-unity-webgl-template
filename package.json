@@ -1,34 +1,34 @@
 {
-  "name": "react-unity-webgl-tests",
-  "version": "2.3.1",
-  "description": "An out-of-the-box test environment for the React Unity WebGL package. This test environment contains a Create-React-App including a Source and Build Unity WebGL project allowing testing and debugging all of it's features.",
-  "keywords": [
-    "React",
-    "Unity",
-    "WebGL"
-  ],
-  "homepage": "https://jeffreylanters.github.io/react-unity-webgl-tests",
-  "bugs": {
-    "url": "https://github.com/jeffreylanters/react-unity-webgl-tests/issues",
-    "email": "jeffreylanters@me.com"
+  "name": "react-unity-webgl-template",
+  "version": "3.0.0",
+  "description": "An out-of-the-box sandbox environment for the React Unity WebGL package. This environment contains a Create-React-App including both the source and build of a Unity WebGL project, allowing to test and debug all of its features.",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.47",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "react-unity-webgl": "^9.0.4",
+    "typescript": "^4.7.4"
   },
-  "license": "Apache-2.0",
-  "author": {
-    "name": "Jeffrey Lanters",
-    "email": "jeffreylanters@me.com",
-    "url": "https://jeffreylanters.nl"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "funding": [
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/jeffreylanters"
-    },
-    {
-      "type": "paypal",
-      "url": "https://paypal.me/jeffreylanters"
-    }
-  ],
-  "main": "./build/index.html",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -40,38 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jeffreylanters/react-unity-webgl-tests.git"
-  },
-  "scripts": {
-    "start": "PUBLIC_URL=/ react-scripts start",
-    "build": "PUBLIC_URL=/ react-scripts build",
-    "build:gh-pages": "PUBLIC_URL=/react-unity-webgl-tests/ react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "dependencies": {
-    "@testing-library/jest-dom": "5.14.1",
-    "@testing-library/react": "12.1.2",
-    "@testing-library/user-event": "13.5.0",
-    "@types/jest": "27.0.2",
-    "@types/node": "16.11.6",
-    "@types/react": "17.0.33",
-    "@types/react-dom": "17.0.10",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-scripts": "4.0.3",
-    "react-unity-webgl": "latest",
-    "typescript": "4.4.4",
-    "web-vitals": "2.1.2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "private": true
+  }
 }
