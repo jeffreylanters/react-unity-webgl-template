@@ -1,11 +1,5 @@
 ﻿mergeInto(LibraryManager.library, {
-  RotationDidUpdate: function (degrees) {
-    dispatchReactUnityEvent("RotationDidUpdate", degrees);
+  GameOver: function (time, score) {
+    dispatchReactUnityEvent("GameOver", time, score);
   },
-  Say: function (message) {
-    dispatchReactUnityEvent("Say", Pointer_stringify(message));
-  },
-  ClickedPosition: function (x, y) {
-    dispatchReactUnityEvent("ClickedPosition", x, y);
-  }
 });
