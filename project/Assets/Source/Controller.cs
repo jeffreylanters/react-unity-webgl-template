@@ -12,24 +12,28 @@ class Controller : MonoBehaviour
 #endif
 
   [SerializeField] Crate crate;
+  [SerializeField] Camera camera;
+  [SerializeField] AudioSource audioSource;
 
   int score = 0;
 
 #if UNITY_EDITOR
   void Start()
   {
-    crate.Appear();
+    Invoke(nameof(StartGame), 1f);
   }
 #endif
 
   public void StartGame()
   {
     crate.Appear();
+    audioSource.Play();
   }
 
   public void CrateClicked(Crate crate)
   {
     score += 1;
+    camera.Shake(0.1f);
     ScoreDidUpdate(score);
   }
 }
