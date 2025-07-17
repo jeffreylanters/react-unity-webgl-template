@@ -1,3 +1,4 @@
+# Unity Editor
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -9,10 +10,10 @@
 /[Rr]ecordings/
 /[Aa]ssets/Plugins/Editor/JetBrains*
 .vs/
-.vscode/
 .gradle/
-ExportedObj/
 .consulo/
+ExportedObj/
+sysinfo.txt
 *.csproj
 *.unityproj
 *.sln
@@ -30,7 +31,6 @@ ExportedObj/
 *.pidb.meta
 *.pdb.meta
 *.mdb.meta
-sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
