@@ -71,9 +71,7 @@ export function Game() {
           onClick={handleClickStart}
         />
       </div>
-      <div className="score-display">
-        <span className="score-value">{score}</span>
-      </div>
+      <div className="score-display">{score}</div>
       <div className="fps-counter">{Math.round(fps)} FPS</div>
       <Unity
         unityProvider={unityProvider}
