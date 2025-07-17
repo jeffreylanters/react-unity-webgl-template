@@ -103,10 +103,8 @@
   font-size: 60px;
   font-family: "Trebuchet MS", sans-serif;
   font-weight: bold;
-  /* text gradient */
   background: linear-gradient(90deg, #ffa229, #ff6f61);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   pointer-events: none;
