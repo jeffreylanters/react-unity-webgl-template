@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.game-container > canvas {
+.game-container > .unity-canvas {
   width: 100%;
   height: 100%;
 }
@@ -21,12 +21,106 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #cf6e97;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #6e4063;
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
 
 .game-container > .loading-overlay.loaded {
   opacity: 0;
+  pointer-events: none;
+}
+
+.game-container > .loading-overlay > .game-logo {
+  width: 80%;
+  max-width: 300px;
+}
+
+.game-container > .loading-overlay > .loading-indicator-bar {
+  width: 80%;
+  max-width: 200px;
+  height: 20px;
+  background-color: #ffffff73;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.game-container
+  > .loading-overlay
+  > .loading-indicator-bar
+  > .loading-indicator-fill {
+  width: 0;
+  height: 100%;
+  background-image: linear-gradient(0deg, #ffa229, #ff6f61);
+  transition: width 0.5s ease-in-out;
+}
+
+.game-container > .main-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 90;
+  background-color: rgba(110, 64, 99, 0.5);
+  backdrop-filter: blur(5px);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.game-container > .main-menu.started {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.game-container > .main-menu > .game-logo,
+.game-container > .main-menu > .start-button {
+  width: 80%;
+  max-width: 300px;
+}
+
+.game-container > .main-menu > .start-button {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.game-container > .main-menu > .start-button:hover {
+  transform: scale(1.05);
+}
+
+.game-container > .score-display {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 80;
+  font-size: 60px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  /* text gradient */
+  background: linear-gradient(90deg, #ffa229, #ff6f61);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.game-container > .fps-counter {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 70;
+  color: yellow;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  text-align: center;
   pointer-events: none;
 }
