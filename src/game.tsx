@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Unity, useUnityContext, useUnityMetricsInfo } from "react-unity-webgl";
 import "./game.css";
 
@@ -28,10 +28,13 @@ export function Game() {
     interval: 1000 / 60,
   });
 
-  function handleClickStart() {
+  const handleClickStart = useCallback(() => {
+    if (!isLoaded || isStarted) {
+      return;
+    }
     sendMessage("Controller", "StartGame");
     setIsStarted(true);
-  }
+  }, [isLoaded, isStarted, sendMessage]);
 
   useEffect(() => {
     addEventListener("scoreDidUpdate", setScore);
@@ -40,19 +43,27 @@ export function Game() {
     };
   }, [addEventListener, removeEventListener]);
 
+  const rootClassname = useMemo(() => {
+    let className = "game-container";
+    if (isLoaded) {
+      className += " is-loaded";
+    }
+    if (isStarted) {
+      className += " is-started";
+    }
+    return className;
+  }, [isLoaded, isStarted]);
+
   return (
-    <div className="game-container">
-      <div className={["loading-overlay", isLoaded && "loaded"].join(" ")}>
+    <div className={rootClassname}>
+      <div className="heads-up-display">
         <img src="/game-logo.png" className="game-logo" alt="Game Logo" />
-        <div className="loading-indicator-bar">
+        <div className="loading-bar">
           <div
-            className="loading-indicator-fill"
+            className="loading-fill"
             style={{ width: `${loadingProgression * 100}%` }}
           />
         </div>
-      </div>
-      <div className={["main-menu", isStarted && "started"].join(" ")}>
-        <img src="/game-logo.png" alt="Game Logo" className="game-logo" />
         <img
           src="/start-button.png"
           alt="Start Button"
