@@ -72,7 +72,7 @@ export function Game() {
         />
       </div>
       <div className="score-display">{score}</div>
-      <div className="fps-counter">{Math.round(fps)} FPS</div>
+      {!isNaN(fps) && <div className="fps-counter">{Math.round(fps)} FPS</div>}
       <Unity
         unityProvider={unityProvider}
         devicePixelRatio={window.devicePixelRatio}
