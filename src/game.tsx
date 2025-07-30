@@ -1,10 +1,22 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Unity, useUnityContext, useUnityMetricsInfo } from "react-unity-webgl";
+import {
+  Unity,
+  useUnityContext,
+  useUnityMetricsInfo,
+  UnityCacheControlMode,
+} from "react-unity-webgl";
 import "./game.css";
 
 export function Game() {
   const [score, setScore] = useState(0);
   const [isStarted, setIsStarted] = useState(false);
+
+  const cacheControl = useCallback((url: string): UnityCacheControlMode => {
+    if (url.endsWith(".wasm") || url.endsWith(".data")) {
+      return "immutable";
+    }
+    return "no-store";
+  }, []);
 
   const {
     loadingProgression,
@@ -22,6 +34,7 @@ export function Game() {
     companyName: "Jeffrey Lanters",
     productName: "Crate Clicker",
     productVersion: "1.0.0",
+    cacheControl: cacheControl,
   });
 
   const { fps } = useUnityMetricsInfo(getMetricsInfo, {
@@ -72,7 +85,9 @@ export function Game() {
         />
       </div>
       <div className="score-display">{score}</div>
-      {!isNaN(fps) && <div className="fps-counter">{Math.round(fps)} FPS</div>}
+      {fps && !isNaN(fps) && (
+        <div className="fps-counter">{Math.round(fps)} FPS</div>
+      )}
       <Unity
         unityProvider={unityProvider}
         devicePixelRatio={window.devicePixelRatio}
